@@ -364,6 +364,7 @@
   .project-card:nth-child(15) { animation-delay:.84s; }
   .project-card:nth-child(16) { animation-delay:.90s; }
   .project-card:nth-child(17) { animation-delay:.96s; }
+  .project-card:nth-child(18) { animation-delay:1.02s; }
 
   @keyframes shake {
     0%,100% { transform:translateX(0); }
@@ -459,7 +460,7 @@
   <div class="stats-bar">
     <div class="stat-item">
       <span class="stat-dot" style="background:var(--accent);"></span>
-      <span>共</span><span class="stat-num" id="totalCount">20</span><span>个项目</span>
+      <span>共</span><span class="stat-num" id="totalCount">21</span><span>个项目</span>
     </div>
     <div class="stat-item">
       <span class="stat-dot status-live"></span><span>全部在线</span>
@@ -471,12 +472,13 @@
   </div>
 
   <div class="filter-bar" id="filterBar">
-    <button class="filter-btn active" data-cat="all" onclick="setCategory('all')">全部 <span class="count">20</span></button>
+    <button class="filter-btn active" data-cat="all" onclick="setCategory('all')">全部 <span class="count">21</span></button>
     <button class="filter-btn filter-btn-coral" data-cat="研读" onclick="setCategory('研读')">政策研读 <span class="count">6</span></button>
     <button class="filter-btn filter-btn-amber" data-cat="项目" onclick="setCategory('项目')">公司项目 <span class="count">1</span></button>
     <button class="filter-btn filter-btn-green" data-cat="旅行" onclick="setCategory('旅行')">旅行攻略 <span class="count">2</span></button>
     <button class="filter-btn filter-btn-green" data-cat="教育" onclick="setCategory('教育')">家庭教育 <span class="count">4</span></button>
     <button class="filter-btn filter-btn-green" data-cat="兴趣研究" onclick="setCategory('兴趣研究')">兴趣研究 <span class="count">7</span></button>
+    <button class="filter-btn filter-btn-green" data-cat="哲学" onclick="setCategory('哲学')">哲学人文 <span class="count">1</span></button>
   </div>
 </header>
 
@@ -485,7 +487,7 @@
 
   <div class="section-label">
     <span class="section-title">全部项目</span>
-    <span class="section-count" id="visibleCount">显示 20 个</span>
+    <span class="section-count" id="visibleCount">显示 21 个</span>
   </div>
 
   <div class="card-grid" id="cardGrid">
@@ -881,6 +883,26 @@
         <span class="tag tag-green">旅行攻略</span>
         <span class="tag tag-green">厦门</span>
         <span class="tag tag-green">寺庙指南</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+    <!-- ========== CARD 21: 佛道双峰横纵聚拢 ========== -->
+    <a href="https://riversnow0505.github.io/fodao-study/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-amber" data-category="哲学" data-tags="哲学 佛学 道家 金刚经 道德经 易经 研究" data-title="凡所有相·大象无形 — 佛道双峰横纵聚拢">
+      <div class="card-header">
+        <div class="card-icon-wrap icon-amber">&#10022;</div>
+        <span class="card-date">2026-06-28</span>
+      </div>
+      <div class="card-title">凡所有相 · 大象无形</div>
+      <div class="card-desc">佛道双峰横纵聚拢。渤海小吏视频中"凡所有相皆是虚妄"与"大方无隅大器免成大音希声大象无形"的深度交汇研究——纵向溯源头、横向对观、交汇落脚。暗色杂志风排版。</div>
+      <div class="tags-row">
+        <span class="tag tag-amber">佛学</span>
+        <span class="tag tag-amber">道家</span>
+        <span class="tag tag-amber">深度研究</span>
       </div>
       <div class="card-footer">
         <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
