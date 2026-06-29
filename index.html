@@ -365,6 +365,11 @@
   .project-card:nth-child(16) { animation-delay:.90s; }
   .project-card:nth-child(17) { animation-delay:.96s; }
   .project-card:nth-child(18) { animation-delay:1.02s; }
+  .project-card:nth-child(19) { animation-delay:1.08s; }
+  .project-card:nth-child(20) { animation-delay:1.14s; }
+  .project-card:nth-child(21) { animation-delay:1.20s; }
+  .project-card:nth-child(22) { animation-delay:1.26s; }
+  .project-card:nth-child(18) { animation-delay:1.02s; }
 
   @keyframes shake {
     0%,100% { transform:translateX(0); }
@@ -460,20 +465,20 @@
   <div class="stats-bar">
     <div class="stat-item">
       <span class="stat-dot" style="background:var(--accent);"></span>
-      <span>共</span><span class="stat-num" id="totalCount">21</span><span>个项目</span>
+      <span>共</span><span class="stat-num" id="totalCount">22</span><span>个项目</span>
     </div>
     <div class="stat-item">
       <span class="stat-dot status-live"></span><span>全部在线</span>
     </div>
     <div class="stat-item">
       <span class="stat-dot" style="background:var(--blue);"></span>
-      <span id="lastUpdate">最后更新：2026-06-28</span>
+      <span id="lastUpdate">最后更新：2026-06-29</span>
     </div>
   </div>
 
   <div class="filter-bar" id="filterBar">
-    <button class="filter-btn active" data-cat="all" onclick="setCategory('all')">全部 <span class="count">21</span></button>
-    <button class="filter-btn filter-btn-coral" data-cat="研读" onclick="setCategory('研读')">政策研读 <span class="count">6</span></button>
+    <button class="filter-btn active" data-cat="all" onclick="setCategory('all')">全部 <span class="count">22</span></button>
+    <button class="filter-btn filter-btn-coral" data-cat="研读" onclick="setCategory('研读')">政策研读 <span class="count">7</span></button>
     <button class="filter-btn filter-btn-amber" data-cat="项目" onclick="setCategory('项目')">公司项目 <span class="count">1</span></button>
     <button class="filter-btn filter-btn-green" data-cat="旅行" onclick="setCategory('旅行')">旅行攻略 <span class="count">2</span></button>
     <button class="filter-btn filter-btn-green" data-cat="教育" onclick="setCategory('教育')">家庭教育 <span class="count">4</span></button>
@@ -487,7 +492,7 @@
 
   <div class="section-label">
     <span class="section-title">全部项目</span>
-    <span class="section-count" id="visibleCount">显示 21 个</span>
+    <span class="section-count" id="visibleCount">显示 22 个</span>
   </div>
 
   <div class="card-grid" id="cardGrid">
@@ -903,6 +908,26 @@
         <span class="tag tag-amber">佛学</span>
         <span class="tag tag-amber">道家</span>
         <span class="tag tag-amber">深度研究</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+    <!-- ========== CARD 22: AI时代的城市更新 ========== -->
+    <a href="https://riversnow0505.github.io/ai-urban-renewal-platform/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-blue" data-category="研读" data-tags="城市更新 AI 行业分析 空间 运营" data-title="AI时代的城市更新：从空间容器到关系平台">
+      <div class="card-header">
+        <div class="card-icon-wrap icon-blue">&#127961;</div>
+        <span class="card-date">2026-06-29</span>
+      </div>
+      <div class="card-title">AI时代的城市更新</div>
+      <div class="card-desc">当 AI 重构分工协作的基本前提，城市空间的价值来源正在不可逆地转移。办公/商业/产业三类空间演化路径 + 信任密度框架 + 新资产管理范式 + 可编程空间推演。</div>
+      <div class="tags-row">
+        <span class="tag tag-blue">城市更新</span>
+        <span class="tag tag-blue">AI分析</span>
+        <span class="tag tag-blue">行业深研</span>
       </div>
       <div class="card-footer">
         <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
