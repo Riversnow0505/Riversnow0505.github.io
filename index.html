@@ -373,6 +373,7 @@
   .project-card:nth-child(23) { animation-delay:1.32s; }
   .project-card:nth-child(24) { animation-delay:1.38s; }
   .project-card:nth-child(25) { animation-delay:1.44s; }
+  .project-card:nth-child(26) { animation-delay:1.50s; }
 
   @keyframes shake {
     0%,100% { transform:translateX(0); }
@@ -468,7 +469,7 @@
   <div class="stats-bar">
     <div class="stat-item">
       <span class="stat-dot" style="background:var(--accent);"></span>
-      <span>共</span><span class="stat-num" id="totalCount">24</span><span>个项目</span>
+      <span>共</span><span class="stat-num" id="totalCount">26</span><span>个项目</span>
     </div>
     <div class="stat-item">
       <span class="stat-dot status-live"></span><span>全部在线</span>
@@ -480,11 +481,11 @@
   </div>
 
   <div class="filter-bar" id="filterBar">
-    <button class="filter-btn active" data-cat="all" onclick="setCategory('all')">全部 <span class="count">25</span></button>
+    <button class="filter-btn active" data-cat="all" onclick="setCategory('all')">全部 <span class="count">26</span></button>
     <button class="filter-btn filter-btn-coral" data-cat="研读" onclick="setCategory('研读')">政策研读 <span class="count">8</span></button>
     <button class="filter-btn filter-btn-amber" data-cat="项目" onclick="setCategory('项目')">公司项目 <span class="count">1</span></button>
     <button class="filter-btn filter-btn-green" data-cat="旅行" onclick="setCategory('旅行')">旅行攻略 <span class="count">2</span></button>
-    <button class="filter-btn filter-btn-green" data-cat="教育" onclick="setCategory('教育')">家庭教育 <span class="count">6</span></button>
+    <button class="filter-btn filter-btn-green" data-cat="教育" onclick="setCategory('教育')">家庭教育 <span class="count">7</span></button>
     <button class="filter-btn filter-btn-green" data-cat="兴趣研究" onclick="setCategory('兴趣研究')">兴趣研究 <span class="count">7</span></button>
     <button class="filter-btn filter-btn-green" data-cat="哲学" onclick="setCategory('哲学')">哲学人文 <span class="count">1</span></button>
   </div>
@@ -495,7 +496,7 @@
 
   <div class="section-label">
     <span class="section-title">全部项目</span>
-    <span class="section-count" id="visibleCount">显示 25 个</span>
+    <span class="section-count" id="visibleCount">显示 26 个</span>
   </div>
 
   <div class="card-grid" id="cardGrid">
@@ -991,6 +992,26 @@
         <span class="tag tag-green">政策解读</span>
         <span class="tag tag-green">家庭教育</span>
         <span class="tag tag-green">行动指南</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+    <!-- ========== CARD 26: Snow数学期末诊断 ========== -->
+    <a href="https://riversnow0505.github.io/snow-exam-diagnosis/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="教育" data-tags="家庭 教育 数学 考试诊断 二年级 练习" data-title="Snow 数学期末诊断与举一反五练习">
+      <div class="card-header">
+        <div class="card-icon-wrap icon-green">&#128221;</div>
+        <span class="card-date">2026-06-30</span>
+      </div>
+      <div class="card-title">Snow数学期末诊断</div>
+      <div class="card-desc">二年级下册数学期末试卷诊断 + 举一反五练习。含错题"先做后看"交互分析、4大根因总结、6类30道同类练习题（密码保护答案）。让孩子先自己重做再核对答案，区分是粗心还是真不会。</div>
+      <div class="tags-row">
+        <span class="tag tag-green">家庭教育</span>
+        <span class="tag tag-green">数学诊断</span>
+        <span class="tag tag-green">举一反五</span>
       </div>
       <div class="card-footer">
         <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
