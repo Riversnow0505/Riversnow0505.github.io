@@ -213,6 +213,19 @@
   .filter-btn-amber.active { background:var(--amber); border-color:var(--amber); }
   .filter-btn-green.active { background:var(--accent); border-color:var(--accent); }
 
+  /* ============ SORT TOGGLE ============ */
+  .sort-btn {
+    display:inline-flex; align-items:center; gap:6px;
+    margin-left:auto;
+    padding:6px 16px; border-radius:100px; border:1.5px solid var(--border);
+    background:var(--card-bg); color:var(--text-secondary);
+    font-size:13px; font-weight:500; cursor:pointer;
+    font-family:inherit; transition:var(--transition); white-space:nowrap;
+  }
+  .sort-btn:hover { border-color:var(--border-hover); color:var(--text); }
+  .sort-btn svg { width:14px; height:14px; transition:transform .2s; }
+  .sort-btn.asc svg { transform:rotate(180deg); }
+
   /* ============ STATS BAR ============ */
   .stats-bar { display:flex; gap:24px; padding:16px 0 0; flex-wrap:wrap; }
   .stat-item { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary); }
@@ -501,6 +514,10 @@
     <button class="filter-btn filter-btn-green" data-cat="亲子教育" onclick="setCategory('亲子教育')">亲子教育 <span class="count">9</span></button>
     <button class="filter-btn filter-btn-green" data-cat="教育政策" onclick="setCategory('教育政策')">教育政策 <span class="count">3</span></button>
     <button class="filter-btn filter-btn-green" data-cat="兴趣研究" onclick="setCategory('兴趣研究')">兴趣研究 <span class="count">14</span></button>
+    <button class="sort-btn" id="sortToggle" onclick="toggleSort()" title="切换排序：最新在前 / 最早在前">
+      <span id="sortLabel">最新在前</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14"/><polyline points="19 12 12 19 5 12"/></svg>
+    </button>
   </div>
 </header>
 
@@ -1386,6 +1403,42 @@
       setCategory('all');
     }
   });
+
+  // ===== SORT TOGGLE（最新在前 / 最早在前）=====
+  var sortToggle = document.getElementById('sortToggle');
+  var sortLabel = document.getElementById('sortLabel');
+  var sortOrder = sessionStorage.getItem('portal_sort') || 'desc'; // desc=新→旧, asc=旧→新
+
+  function getCardDate(card) {
+    var d = card.querySelector('.card-date');
+    return d ? d.textContent.trim() : '0000-00-00';
+  }
+
+  function applySort() {
+    var sorted = cards.slice().sort(function(a, b) {
+      var da = getCardDate(a), db = getCardDate(b);
+      if (da === db) return 0;
+      // desc：日期大的（新）排前面
+      return sortOrder === 'desc' ? (da < db ? 1 : -1) : (da < db ? -1 : 1);
+    });
+    sorted.forEach(function(c) { cardGrid.appendChild(c); });
+    // 维持 addCard 与 noResults 在末尾
+    cardGrid.appendChild(addCardEl);
+    cardGrid.appendChild(noResults);
+    sortLabel.textContent = sortOrder === 'desc' ? '最新在前' : '最早在前';
+    sortToggle.classList.toggle('asc', sortOrder === 'asc');
+  }
+
+  function toggleSort() {
+    sortOrder = (sortOrder === 'desc') ? 'asc' : 'desc';
+    sessionStorage.setItem('portal_sort', sortOrder);
+    applySort();
+    applyFilters();
+  }
+
+  // 初始排序（默认倒序：新→旧）
+  applySort();
+  applyFilters();
 </script>
 
 </body>
