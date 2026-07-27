@@ -494,24 +494,24 @@
   <div class="stats-bar">
     <div class="stat-item">
       <span class="stat-dot" style="background:var(--accent);"></span>
-      <span>共</span><span class="stat-num" id="totalCount">42</span><span>个项目</span>
+      <span>共</span><span class="stat-num" id="totalCount">43</span><span>个项目</span>
     </div>
     <div class="stat-item">
       <span class="stat-dot status-live"></span><span>全部在线</span>
     </div>
     <div class="stat-item">
       <span class="stat-dot" style="background:var(--blue);"></span>
-      <span id="lastUpdate">最后更新：2026-07-20</span>
+      <span id="lastUpdate">最后更新：2026-07-27</span>
     </div>
   </div>
 
   <div class="filter-bar" id="filterBar">
-    <button class="filter-btn active" data-cat="all" onclick="setCategory('all')">全部 <span class="count">42</span></button>
+    <button class="filter-btn active" data-cat="all" onclick="setCategory('all')">全部 <span class="count">43</span></button>
     <button class="filter-btn filter-btn-coral" data-cat="复盘作品集" onclick="setCategory('复盘作品集')">复盘作品集 <span class="count">3</span></button>
     <button class="filter-btn filter-btn-coral" data-cat="研读" onclick="setCategory('研读')">政策研读 <span class="count">10</span></button>
     <button class="filter-btn filter-btn-amber" data-cat="项目" onclick="setCategory('项目')">公司项目 <span class="count">1</span></button>
     <button class="filter-btn filter-btn-green" data-cat="旅行" onclick="setCategory('旅行')">旅行攻略 <span class="count">2</span></button>
-    <button class="filter-btn filter-btn-green" data-cat="亲子教育" onclick="setCategory('亲子教育')">亲子教育 <span class="count">9</span></button>
+    <button class="filter-btn filter-btn-green" data-cat="亲子教育" onclick="setCategory('亲子教育')">亲子教育 <span class="count">10</span></button>
     <button class="filter-btn filter-btn-green" data-cat="教育政策" onclick="setCategory('教育政策')">教育政策 <span class="count">3</span></button>
     <button class="filter-btn filter-btn-green" data-cat="兴趣研究" onclick="setCategory('兴趣研究')">兴趣研究 <span class="count">14</span></button>
     <button class="sort-btn" id="sortToggle" onclick="toggleSort()" title="切换排序：最新在前 / 最早在前">
@@ -526,7 +526,7 @@
 
   <div class="section-label">
     <span class="section-title">全部项目</span>
-    <span class="section-count" id="visibleCount">显示 42 个</span>
+    <span class="section-count" id="visibleCount">显示 43 个</span>
   </div>
 
   <div class="card-grid" id="cardGrid">
@@ -1228,6 +1228,21 @@
     </a>
 
     <!-- ========== ADD NEW CARD ========== -->
+    <a href="https://riversnow0505.github.io/luoji-xiaozhentan/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="亲子教育" data-tags="亲子 逻辑 推理 游戏" data-title="逻辑小侦探 · 儿童逻辑推理小游戏">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#128269;</div>
+        <span class="card-date">2026-07-27</span>
+      </div>
+      <div class="card-title">逻辑小侦探 · 儿童逻辑推理小游戏</div>
+      <div class="card-desc">5 个生活小案件，带孩子用「看线索 → 排除不可能 → 锁定答案」的方式练逻辑；热点收集、线索比对、顺序还原、逻辑网格多种玩法，进度只留本机。</div>
+      <div class="tags-row"><span class="tag tag-green">亲子</span><span class="tag tag-green">逻辑</span><span class="tag tag-green">推理</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
     <a href="https://github.com/Riversnow0505?tab=repositories" target="_blank" rel="noopener noreferrer"
        class="add-card" id="addCard">
       <div class="add-icon">+</div>
