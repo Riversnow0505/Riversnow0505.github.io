@@ -213,6 +213,19 @@
   .filter-btn-amber.active { background:var(--amber); border-color:var(--amber); }
   .filter-btn-green.active { background:var(--accent); border-color:var(--accent); }
 
+  /* ============ SORT TOGGLE ============ */
+  .sort-btn {
+    display:inline-flex; align-items:center; gap:6px;
+    margin-left:auto;
+    padding:6px 16px; border-radius:100px; border:1.5px solid var(--border);
+    background:var(--card-bg); color:var(--text-secondary);
+    font-size:13px; font-weight:500; cursor:pointer;
+    font-family:inherit; transition:var(--transition); white-space:nowrap;
+  }
+  .sort-btn:hover { border-color:var(--border-hover); color:var(--text); }
+  .sort-btn svg { width:14px; height:14px; transition:transform .2s; }
+  .sort-btn.asc svg { transform:rotate(180deg); }
+
   /* ============ STATS BAR ============ */
   .stats-bar { display:flex; gap:24px; padding:16px 0 0; flex-wrap:wrap; }
   .stat-item { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-secondary); }
@@ -347,14 +360,45 @@
     to { opacity:1; transform:translateY(0); }
   }
   .project-card { animation:fadeInUp .4s ease-out both; }
-  .project-card:nth-child(1) { animation-delay:0s; }
-  .project-card:nth-child(2) { animation-delay:.06s; }
-  .project-card:nth-child(3) { animation-delay:.12s; }
-  .project-card:nth-child(4) { animation-delay:.18s; }
-  .project-card:nth-child(5) { animation-delay:.24s; }
-  .project-card:nth-child(6) { animation-delay:.30s; }
-  .project-card:nth-child(7) { animation-delay:.36s; }
-  .project-card:nth-child(8) { animation-delay:.42s; }
+  .project-card:nth-child(1) { animation-delay:0.0s; }
+  .project-card:nth-child(2) { animation-delay:0.0s; }
+  .project-card:nth-child(3) { animation-delay:0.06s; }
+  .project-card:nth-child(4) { animation-delay:0.12s; }
+  .project-card:nth-child(5) { animation-delay:0.18s; }
+  .project-card:nth-child(6) { animation-delay:0.24s; }
+  .project-card:nth-child(7) { animation-delay:0.3s; }
+  .project-card:nth-child(8) { animation-delay:0.36s; }
+  .project-card:nth-child(9) { animation-delay:0.42s; }
+  .project-card:nth-child(10) { animation-delay:0.48s; }
+  .project-card:nth-child(11) { animation-delay:0.54s; }
+  .project-card:nth-child(12) { animation-delay:0.6s; }
+  .project-card:nth-child(13) { animation-delay:0.66s; }
+  .project-card:nth-child(14) { animation-delay:0.72s; }
+  .project-card:nth-child(15) { animation-delay:0.78s; }
+  .project-card:nth-child(16) { animation-delay:0.84s; }
+  .project-card:nth-child(17) { animation-delay:0.9s; }
+  .project-card:nth-child(18) { animation-delay:0.96s; }
+  .project-card:nth-child(19) { animation-delay:1.02s; }
+  .project-card:nth-child(20) { animation-delay:1.08s; }
+  .project-card:nth-child(21) { animation-delay:1.14s; }
+  .project-card:nth-child(22) { animation-delay:1.2s; }
+  .project-card:nth-child(23) { animation-delay:1.26s; }
+  .project-card:nth-child(24) { animation-delay:1.32s; }
+  .project-card:nth-child(25) { animation-delay:1.38s; }
+  .project-card:nth-child(26) { animation-delay:1.44s; }
+  .project-card:nth-child(27) { animation-delay:1.5s; }
+.project-card:nth-child(28) { animation-delay:1.56s; }
+.project-card:nth-child(29) { animation-delay:1.62s; }
+.project-card:nth-child(30) { animation-delay:1.68s; }
+.project-card:nth-child(31) { animation-delay:1.74s; }
+.project-card:nth-child(32) { animation-delay:1.80s; }
+.project-card:nth-child(33) { animation-delay:1.86s; }
+.project-card:nth-child(34) { animation-delay:1.92s; }
+.project-card:nth-child(35) { animation-delay:1.98s; }
+
+
+
+
 
   @keyframes shake {
     0%,100% { transform:translateX(0); }
@@ -450,24 +494,30 @@
   <div class="stats-bar">
     <div class="stat-item">
       <span class="stat-dot" style="background:var(--accent);"></span>
-      <span>共</span><span class="stat-num" id="totalCount">14</span><span>个项目</span>
+      <span>共</span><span class="stat-num" id="totalCount">44</span><span>个项目</span>
     </div>
     <div class="stat-item">
       <span class="stat-dot status-live"></span><span>全部在线</span>
     </div>
     <div class="stat-item">
       <span class="stat-dot" style="background:var(--blue);"></span>
-      <span id="lastUpdate">最后更新：2026-08-03</span>
+      <span id="lastUpdate">最后更新：2026-07-29</span>
     </div>
   </div>
 
   <div class="filter-bar" id="filterBar">
-    <button class="filter-btn active" data-cat="all" onclick="setCategory('all')">全部 <span class="count">14</span></button>
-    <button class="filter-btn filter-btn-coral" data-cat="研读" onclick="setCategory('研读')">政策研读 <span class="count">5</span></button>
+    <button class="filter-btn active" data-cat="all" onclick="setCategory('all')">全部 <span class="count">44</span></button>
+    <button class="filter-btn filter-btn-coral" data-cat="复盘作品集" onclick="setCategory('复盘作品集')">复盘作品集 <span class="count">3</span></button>
+    <button class="filter-btn filter-btn-coral" data-cat="研读" onclick="setCategory('研读')">政策研读 <span class="count">11</span></button>
     <button class="filter-btn filter-btn-amber" data-cat="项目" onclick="setCategory('项目')">公司项目 <span class="count">1</span></button>
-    <button class="filter-btn filter-btn-green" data-cat="旅行" onclick="setCategory('旅行')">旅行攻略 <span class="count">1</span></button>
-    <button class="filter-btn filter-btn-green" data-cat="财商" onclick="setCategory('财商')">财商教育 <span class="count">1</span></button>
-    <button class="filter-btn filter-btn-green" data-cat="兴趣研究" onclick="setCategory('兴趣研究')">兴趣研究 <span class="count">6</span></button>
+    <button class="filter-btn filter-btn-green" data-cat="旅行" onclick="setCategory('旅行')">旅行攻略 <span class="count">2</span></button>
+    <button class="filter-btn filter-btn-green" data-cat="亲子教育" onclick="setCategory('亲子教育')">亲子教育 <span class="count">10</span></button>
+    <button class="filter-btn filter-btn-green" data-cat="教育政策" onclick="setCategory('教育政策')">教育政策 <span class="count">3</span></button>
+    <button class="filter-btn filter-btn-green" data-cat="兴趣研究" onclick="setCategory('兴趣研究')">兴趣研究 <span class="count">14</span></button>
+    <button class="sort-btn" id="sortToggle" onclick="toggleSort()" title="切换排序：最新在前 / 最早在前">
+      <span id="sortLabel">最新在前</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14"/><polyline points="19 12 12 19 5 12"/></svg>
+    </button>
   </div>
 </header>
 
@@ -476,61 +526,37 @@
 
   <div class="section-label">
     <span class="section-title">全部项目</span>
-    <span class="section-count" id="visibleCount">显示 14 个</span>
+    <span class="section-count" id="visibleCount">显示 44 个</span>
   </div>
 
   <div class="card-grid" id="cardGrid">
-
-    <!-- ========== CARD 1: 女儿财商启蒙计划 ========== -->
-    <a href="https://riversnow0505.github.io/daughter-finance-plan/" target="_blank" rel="noopener noreferrer"
-       class="project-card card-accent-green" data-category="财商" data-tags="家庭 教育 财商 幻灯片" data-title="女儿财商启蒙十年计划">
+    <!-- ========== CARD 1: 逻辑小侦探 · 儿童逻辑推理小游戏 ========== -->
+    <a href="https://riversnow0505.github.io/luoji-xiaozhentan/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="亲子教育" data-tags="亲子 逻辑 推理 游戏" data-title="逻辑小侦探 · 儿童逻辑推理小游戏">
       <div class="card-header">
-        <div class="card-icon-wrap icon-green">&#128214;</div>
-        <span class="card-date">2026-06-08</span>
+        <div class="card-icon-green icon-green">&#128269;</div>
+        <span class="card-date">2026-07-27</span>
       </div>
-      <div class="card-title">女儿财商启蒙十年计划</div>
-      <div class="card-desc">为 8 岁女儿设计的财权阶梯式移交方案——从红包提取 10% 到完全自主，配合三账户制度（零花钱/储蓄金/爱心基金），用十年时间培养负责任的金钱观。含完整 HTML Slides 演示版。</div>
-      <div class="tags-row">
-        <span class="tag tag-green">家庭教育</span>
-        <span class="tag tag-green">财商启蒙</span>
-        <span class="tag tag-green">HTML Slides</span>
-      </div>
+      <div class="card-title">逻辑小侦探 · 儿童逻辑推理小游戏</div>
+      <div class="card-desc">5 个生活小案件，带孩子用「看线索 → 排除不可能 → 锁定答案」的方式练逻辑；热点收集、线索比对、顺序还原、逻辑网格多种玩法，进度只留本机。</div>
+      <div class="tags-row"><span class="tag tag-green">亲子</span><span class="tag tag-green">逻辑</span><span class="tag tag-green">推理</span></div>
       <div class="card-footer">
         <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
         <span class="card-status-dot status-live" title="在线"></span>
       </div>
     </a>
-
-    <!-- ========== CARD 2: 城市更新十五五规划 ========== -->
-    <a href="https://riversnow0505.github.io/test/" target="_blank" rel="noopener noreferrer"
-       class="project-card card-accent-blue" data-category="研读" data-tags="城市 规划 政策 学习 十五五" data-title="城市更新十五五规划学习材料">
+    <!-- ========== CARD 2: 厦门城市更新作为不动产存量时代第二曲线 ========== -->
+    <a href="https://riversnow0505.github.io/xiamen-urban-renewal/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-coral" data-category="研读" data-tags="厦门 城市更新 不动产" data-title="厦门城市更新作为不动产存量时代第二曲线">
       <div class="card-header">
-        <div class="card-icon-wrap icon-blue">&#127961;</div>
-        <span class="card-date">2026-06-08</span>
+        <div class="card-icon-wrap icon-coral">&#127961;</div>
+        <span class="card-date">2026-07-20</span>
       </div>
-      <div class="card-title">城市更新十五五规划学习材料</div>
-      <div class="cell-desc">关于城市更新领域十五五规划的学习整理资料。</div>
+      <div class="card-title">厦门城市更新·第二曲线</div>
+      <div class="card-desc">不动产存量时代第二曲线：政策、资金、算账、玩家、风险、标杆六维客观研究。</div>
       <div class="tags-row">
-        <span class="tag tag-blue">城市规划</span>
-        <span class="tag tag-blue">政策研究</span>
-      </div>
-      <div class="card-footer">
-        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
-        <span class="card-status-dot status-live" title="在线"></span>
-      </div>
-    </a>
-
-    <!-- ========== CARD 3: 国办发〔2026〕13号文解读 ========== -->
-    <a href="https://riversnow0505.github.io/guoban-2026-13/" target="_blank" rel="noopener noreferrer"
-       class="project-card card-accent-coral" data-category="研读" data-tags="政策 不动产 投资 解读 国办 住房" data-title="国办发〔2026〕13号文·不动产投资开发视角解读">
-      <div class="card-header">
-        <div class="card-icon-wrap icon-coral">&#127963;</div>
-        <span class="card-date">2026-06-11</span>
-      </div>
-      <div class="card-title">国办发〔2026〕13号文解读</div>
-      <div class="cell-desc">从不动产投资开发视角深度解读国办发〔2026〕13号文，涵盖政策要点、市场影响与应对策略。</div>
-      <div class="tags-row">
-        <span class="tag tag-coral">政策解读</span>
+        <span class="tag tag-coral">厦门</span>
+        <span class="tag tag-coral">城市更新</span>
         <span class="tag tag-coral">不动产</span>
       </div>
       <div class="card-footer">
@@ -539,19 +565,20 @@
       </div>
     </a>
 
-    <!-- ========== CARD 4: 厦门青年住房保障政策 ========== -->
-    <a href="https://riversnow0505.github.io/xiamen-youth-housing/" target="_blank" rel="noopener noreferrer"
-       class="project-card card-accent-green" data-category="研读" data-tags="厦门 政策 住房 青年 保障 租赁 建信" data-title="厦门市青年住房保障政策解读">
+    <!-- ========== CARD 3: 厦门长租公寓行业深度研究报告（2000—2025） ========== -->
+    <a href="https://riversnow0505.github.io/xiamen-rental-report/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-blue" data-category="研读" data-tags="厦门 长租公寓 租赁住房 保障性租赁" data-title="厦门长租公寓行业深度研究报告（2000—2025）">
       <div class="card-header">
-        <div class="card-icon-wrap icon-green">&#127968;</div>
-        <span class="card-date">2026-06-11</span>
+        <div class="card-icon-blue icon-blue">&#128200;</div>
+        <span class="card-date">2026-07-19</span>
       </div>
-      <div class="card-title">厦门青年住房保障政策解读</div>
-      <div class="card-desc">《厦门市加大新就业大学生等青年群体租赁住房保障工作的若干意见》（送审稿）深度解读。从建信住房厦门公司经营视角分析政策机遇与风险，含新旧政策对比、补贴标准、资金流向图表。</div>
+      <div class="card-title">厦门长租公寓行业深度研究报告（2000—2025）</div>
+      <div class="card-desc">政府保障体系（保租房/公租房/人才房/廉租房并轨）与企业市场（央企·地方国企·民企·混改）纳入同一供应体系竞合考量：历史沿革、现状图谱、结构性议题与趋势风险。10 张数据图表。</div>
       <div class="tags-row">
-        <span class="tag tag-green">政策解读</span>
-        <span class="tag tag-green">住房保障</span>
-        <span class="tag tag-green">建信视角</span>
+        <span class="tag tag-blue">厦门</span>
+        <span class="tag tag-blue">长租公寓</span>
+        <span class="tag tag-blue">租赁住房</span>
+        <span class="tag tag-blue">保障性租赁</span>
       </div>
       <div class="card-footer">
         <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
@@ -559,19 +586,21 @@
       </div>
     </a>
 
-    <!-- ========== CARD 5: 2026陆家嘴论坛深度解读 ========== -->
-    <a href="https://riversnow0505.github.io/lujiazui2026/" target="_blank" rel="noopener noreferrer"
-       class="project-card card-accent-coral" data-category="研读" data-tags="金融 政策 陆家嘴论坛 解读 央行 证监会 监管" data-title="2026陆家嘴论坛三大监管演讲深度解读">
+
+    <!-- ========== CARD 4: 厦门市人口发展深度研究（2000—2025） ========== -->
+    <a href="https://riversnow0505.github.io/xiamen-population-2000-2025/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="兴趣研究" data-tags="厦门 人口 城市发展 数据研究" data-title="厦门市人口发展深度研究（2000—2025）">
       <div class="card-header">
-        <div class="card-icon-wrap icon-coral">&#128200;</div>
-        <span class="card-date">2026-06-17</span>
+        <div class="card-icon-green icon-green">&#128202;</div>
+        <span class="card-date">2026-07-18</span>
       </div>
-      <div class="card-title">2026陆家嘴论坛深度解读</div>
-      <div class="card-desc">穿透式解读潘功胜、丁向群、吴清三篇演讲——从"发动机切换"到"利率手术刀"到"投资市重构"，行内人不说但知道的事。适合非金融背景读者下学习圈深度递进。</div>
+      <div class="card-title">厦门市人口发展深度研究（2000—2025）</div>
+      <div class="card-desc">厦门常住人口 2000—2025 从约 205 万到 536.5 万的量级跃迁：总量演变、六区格局、少子化与老龄化、人户背离机制，及 2025—2035 规划目标差距研判。22 张交互图表。</div>
       <div class="tags-row">
-        <span class="tag tag-coral">政策解读</span>
-        <span class="tag tag-coral">金融转型</span>
-        <span class="tag tag-coral">学习笔记</span>
+        <span class="tag tag-green">厦门</span>
+        <span class="tag tag-green">人口</span>
+        <span class="tag tag-green">城市发展</span>
+        <span class="tag tag-green">数据研究</span>
       </div>
       <div class="card-footer">
         <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
@@ -579,19 +608,21 @@
       </div>
     </a>
 
-    <!-- ========== CARD 6: 2026年端午·武夷山·家庭路书 ========== -->
-    <a href="https://riversnow0505.github.io/wuyi-family-guidebook-2026/" target="_blank" rel="noopener noreferrer"
-       class="project-card card-accent-green" data-category="旅行" data-tags="旅行 家庭 武夷山 路书 亲子" data-title="2026年端午·武夷山·家庭路书">
+
+<!-- ========== CARD 5: WorkBuddy保险库复盘 ========== -->
+    <a href="https://riversnow0505.github.io/workbuddy-vault-retro/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-coral" data-category="复盘作品集" data-tags="WorkBuddy 备份 工具建设 方法论" data-title="WorkBuddy保险库复盘">
       <div class="card-header">
-        <div class="card-icon-wrap icon-green">&#128214;</div>
-        <span class="card-date">2026-06-18</span>
+        <div class="card-icon-wrap icon-coral">&#128230;</div>
+        <span class="card-date">2026-07-17</span>
       </div>
-      <div class="card-title">2026年端午·武夷山·家庭路书</div>
-      <div class="card-desc">一家三口（+8岁女儿）的武夷山三天两晚端午之旅攻略。含行程规划、竹筏漂流、大红袍探访、美食住宿推荐，以及给孩子讲的武夷山故事和深度人文附录。</div>
+      <div class="card-title">WorkBuddy保险库复盘</div>
+      <div class="card-desc">从担忧电脑丢失到搭建 git 保险库——WorkBuddy 身份 / 记忆 / Skill 版本化备份系统的完整复盘：构思、踩坑（密码上 GitHub、嵌套 .git）、一键恢复与跨平台同步。</div>
       <div class="tags-row">
-        <span class="tag tag-green">家庭旅行</span>
-        <span class="tag tag-green">亲子攻略</span>
-        <span class="tag tag-green">武夷山</span>
+        <span class="tag tag-coral">WorkBuddy</span>
+        <span class="tag tag-coral">备份</span>
+        <span class="tag tag-coral">工具建设</span>
+        <span class="tag tag-coral">方法论</span>
       </div>
       <div class="card-footer">
         <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
@@ -599,159 +630,596 @@
       </div>
     </a>
 
-    <!-- ========== CARD 7: 宏鼎国际公寓退出方案测算 ========== -->
-    <a href="https://riversnow0505.github.io/hongding-exit-plan/" target="_blank" rel="noopener noreferrer"
-       class="project-card card-accent-amber" data-category="项目" data-tags="建信 住房 宏鼎 公寓 退出 方案 测算 投资" data-title="宏鼎国际公寓退出方案测算">
+    <!-- ========== CARD 6: 建信发文复盘 ========== -->
+    <a href="https://riversnow0505.github.io/jianxin-fawen-fuxi/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-coral" data-category="复盘作品集" data-tags="建信 公文" data-title="建信发文复盘">
       <div class="card-header">
-        <div class="card-icon-wrap icon-amber">&#128202;</div>
-        <span class="card-date">2026-06-18</span>
+        <div class="card-icon-coral icon-coral">&#128196;</div>
+        <span class="card-date">2026-07-15</span>
       </div>
-      <div class="card-title">宏鼎国际公寓退出方案测算</div>
-      <div class="card-desc">建信住房厦门分公司·宏鼎国际公寓项目退出方案测算。5个退出时点方案对比（6/21→8/21→12/31），含运营亏损、押金、违约金的拆解分析与战略建议。取法乎上，得乎其中。</div>
-      <div class="tags-row">
-        <span class="tag tag-blue">建信住房</span>
-        <span class="tag tag-amber">项目退出</span>
-        <span class="tag tag-amber">方案测算</span>
-      </div>
+      <div class="card-title">建信发文复盘</div>
+      <div class="card-desc">「建信发文」SKILL 从想法到可分享工具的构思·创作·迭代深度复盘——把公文规范变成确定性 AI 助手。</div>
+      <div class="tags-row"><span class="tag tag-coral">建信</span><span class="tag tag-coral">公文</span></div>
       <div class="card-footer">
         <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
         <span class="card-status-dot status-live" title="在线"></span>
       </div>
     </a>
 
-    <!-- ========== CARD 8: 房屋安全管理制度政策动态研判 ========== -->
-    <a href="https://riversnow0505.github.io/house-safety-policy-analysis/" target="_blank" rel="noopener noreferrer"
-       class="project-card card-accent-coral" data-category="研读" data-tags="政策 建行 住房 安全 保险 房屋 保险 研读" data-title="房屋安全管理制度政策动态研判 — 学习解读">
+
+    <!-- ========== CARD 7: 开口即得 · AI助手实战培训手册 V1 ========== -->
+    <a href="https://riversnow0505.github.io/kaikoujide/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="兴趣研究" data-tags="AI 实操培训 工具指南" data-title="开口即得 · AI助手实战培训手册 V1">
       <div class="card-header">
-        <div class="card-icon-wrap icon-coral">&#127963;</div>
-        <span class="card-date">2026-06-18</span>
+        <div class="card-icon-green icon-green">&#128187;</div>
+        <span class="card-date">2026-07-11</span>
       </div>
-      <div class="card-title">房屋安全管理制度政策动态研判</div>
-      <div class="card-desc">建行研修中心专题报告学习解读。三项制度（体检·资金·保险）打透「钱·体·险」心智框架，含日本经验、宁波案例、自检问题，适合非科班读者快速消化政策文件。</div>
-      <div class="tags-row">
-        <span class="tag tag-coral">政策研读</span>
-        <span class="tag tag-coral">住房安全</span>
-        <span class="tag tag-coral">三项制度</span>
-      </div>
+      <div class="card-title">开口即得 · AI助手实战培训手册 V1</div>
+      <div class="card-desc">面向非技术普通人（家人 / 亲友 / 同事）的 AI 助手实战培训 MVP。不学代码，只学怎么开口让 AI 替你干活——含认知破冰、上手实操、实战模板与线下带练脚本。</div>
+      <div class="tags-row"><span class="tag tag-green">AI</span><span class="tag tag-green">实操培训</span><span class="tag tag-green">工具指南</span></div>
       <div class="card-footer">
         <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
         <span class="card-status-dot status-live" title="在线"></span>
       </div>
     </a>
 
-    <!-- ========== CARD 9: 肉桂 · 武夷岩茶当家花旦深度解读 ========== -->
-    <a href="https://riversnow0505.github.io/rougui-tea-deep-interpretation/" target="_blank" rel="noopener noreferrer"
-       class="project-card card-accent-green" data-category="兴趣研究" data-tags="岩茶 武夷山 茶文化 深度解读 知识" data-title="肉桂 · 武夷岩茶当家花旦深度解读">
+    <!-- ========== CARD 8: 教育十五五规划·家长视角（顾子明） ========== -->
+    <a href="https://riversnow0505.github.io/edu-practical-intelligence/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="亲子教育" data-tags="亲子 西游记 实践论 育儿" data-title="我太太说孩子喜欢不费脑——一个父亲的教育省思">
       <div class="card-header">
-        <div class="card-icon-wrap icon-green">&#127861;</div>
-        <span class="card-date">2026-06-22</span>
+        <div class="card-icon-green icon-green">&#128214;</div>
+        <span class="card-date">2026-07-06</span>
       </div>
-      <div class="card-title">肉桂 · 武夷岩茶当家花旦深度解读</div>
-      <div class="card-desc">从"霸气""辛锐"的品鉴密码到全肉宴体系、岩茶工艺、山场密码，再到牛肉马肉历史公案——一份让喝茶速度慢下来的理性导览。</div>
-      <div class="tags-row">
-        <span class="tag tag-green">茶文化</span>
-        <span class="tag tag-green">武夷岩茶</span>
-        <span class="tag tag-green">深度解读</span>
-      </div>
+      <div class="card-title">喜欢不费脑？一个爸爸的教育省思</div>
+      <div class="card-desc">当孩子坐不住书桌，却热衷于帮老师做事、帮同学忙、倒洗衣粉——她是"不费脑"还是"身体力行"？一个爸爸从《西游记》菩提祖师"内观不识因无相"悟到《实践论》，在AI时代重新理解教育。</div>
+      <div class="tags-row"><span class="tag tag-green">亲子</span><span class="tag tag-green">西游记</span><span class="tag tag-green">实践论</span><span class="tag tag-green">育儿</span></div>
       <div class="card-footer">
         <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
         <span class="card-status-dot status-live" title="在线"></span>
       </div>
     </a>
 
-    <!-- ========== CARD 10: 水仙 · 武夷岩茶当家花旦深度解读 ========== -->
-    <a href="https://riversnow0505.github.io/shuixian-tea-deep-interpretation/" target="_blank" rel="noopener noreferrer"
-       class="project-card card-accent-green" data-category="兴趣研究" data-tags="岩茶 武夷山 茶文化 水仙 深度解读 知识" data-title="水仙 · 武夷岩茶当家花旦深度解读">
+    <!-- ========== CARD 9: 明朝闭关锁国·三层真相 ========== -->
+    <a href="https://riversnow0505.github.io/ming-dynasty-maritime-ban/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="兴趣研究" data-tags="历史 明朝 海禁" data-title="明朝闭关锁国·三层真相 — 桌面上的理由与桌面下的暗流">
       <div class="card-header">
-        <div class="card-icon-wrap icon-green">&#127861;</div>
-        <span class="card-date">2026-06-22</span>
+        <div class="card-icon-green icon-green">&#128214;</div>
+        <span class="card-date">2026-07-06</span>
       </div>
-      <div class="card-title">水仙 · 武夷岩茶当家花旦深度解读</div>
-      <div class="card-desc">从"水仙"的品种特征、品鉴密码到制作工艺、山场分布——武夷岩茶水仙的全面深度解读。</div>
-      <div class="tags-row">
-        <span class="tag tag-green">茶文化</span>
-        <span class="tag tag-green">武夷岩茶</span>
-        <span class="tag tag-green">水仙</span>
-      </div>
+      <div class="card-title">明朝闭关锁国·三层真相</div>
+      <div class="card-desc">一个强盛276年的国家为什么选择闭关锁国？从海禁时间线的七次拉锯，到桌面上的官方理由、制度层面的路径锁定，再到桌下暗流的利益集团博弈——三个层面揭开明朝海禁276年的完整真相。</div>
+      <div class="tags-row"><span class="tag tag-green">历史</span><span class="tag tag-green">明朝</span><span class="tag tag-green">海禁</span></div>
       <div class="card-footer">
         <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
         <span class="card-status-dot status-live" title="在线"></span>
       </div>
     </a>
 
-    <!-- ========== CARD 11: 武夷岩茶完整知识图谱 ========== -->
-    <a href="https://riversnow0505.github.io/wuyi-rock-tea-atlas/" target="_blank" rel="noopener noreferrer"
-       class="project-card card-accent-green" data-category="兴趣研究" data-tags="岩茶 武夷山 茶文化 知识图谱 品种" data-title="武夷岩茶完整知识图谱">
+        <!-- ========== CARD 10: Snow暑期语文背诵计划学习规则 ========== -->
+    <a href="https://riversnow0505.github.io/snow-recitation-remote/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="亲子教育" data-tags="亲子 语文 背诵 艾宾浩斯 日程表" data-title="Snow暑期语文背诵计划学习规则">
       <div class="card-header">
-        <div class="card-icon-wrap icon-green">&#127861;</div>
-        <span class="card-date">2026-06-22</span>
+        <div class="card-icon-green icon-green">&#128197;</div>
+        <span class="card-date">2026-07-02</span>
       </div>
-      <div class="card-title">武夷岩茶完整知识图谱</div>
-      <div class="card-desc">武夷岩茶全貌梳理——品种体系、山场分布、工艺脉络、品鉴框架，一张图谱掌握岩茶知识体系。</div>
-      <div class="tags-row">
-        <span class="tag tag-green">茶文化</span>
-        <span class="tag tag-green">武夷岩茶</span>
-        <span class="tag tag-green">知识图谱</span>
+      <div class="card-title">Snow暑期语文背诵计划学习规则</div>
+      <div class="card-desc">三年级上册16首必背内容的科学学习方案：四步学习法（先读后看）+ 艾宾浩斯遗忘曲线日程表（7/6-9/1），精确到每天新学和复习内容。A4两页排版，正反面可打印。</div>
+      <div class="tags-row"><span class="tag tag-green">亲子</span><span class="tag tag-green">语文</span><span class="tag tag-green">背诵</span><span class="tag tag-green">艾宾浩斯</span><span class="tag tag-green">日程表</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
       </div>
+    </a>
+    <!-- ========== CARD 11: Snow暑期语文背诵翻书版 ========== -->
+    <a href="https://riversnow0505.github.io/snow-recitation-flipbook/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="亲子教育" data-tags="亲子 语文 背诵" data-title="Snow暑期语文背诵翻书版">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#128218;</div>
+        <span class="card-date">2026-07-02</span>
+      </div>
+      <div class="card-title">Snow暑期语文背诵翻书版</div>
+      <div class="card-desc">三年级上册语文必背16项，按教科书顺序&#30340;翻书交互学习。每页含原文+诗人小传+白话译文+44个视频学习链接+折叠深度内容，支持手机滑动翻页。</div>
+      <div class="tags-row"><span class="tag tag-green">亲子</span><span class="tag tag-green">语文</span><span class="tag tag-green">背诵</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+    <!-- ========== CARD 12: Snow的学业冒险 ========== -->
+    <a href="https://riversnow0505.github.io/gradequest/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="亲子教育" data-tags="亲子 成绩 游戏化 追踪 积分 三年级" data-title="Snow的学业冒险 · 游戏化成绩追踪器">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#127947;</div>
+        <span class="card-date">2026-07-02</span>
+      </div>
+      <div class="card-title">Snow的学业冒险</div>
+      <div class="card-desc">游戏化成绩追踪器——记录每次考试、赚取积分、解锁成就、兑换奖励。20级XP成长系统、积分商店（家长可定制）、成就墙、家长仪表盘（折线图+成绩管理）。单HTML文件，localStorage存储，纯本地使用。</div>
+      <div class="tags-row"><span class="tag tag-green">亲子</span><span class="tag tag-green">成绩</span><span class="tag tag-green">游戏化</span><span class="tag tag-green">追踪</span><span class="tag tag-green">积分</span><span class="tag tag-green">三年级</span></div>
       <div class="card-footer">
         <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
         <span class="card-status-dot status-live" title="在线"></span>
       </div>
     </a>
 
-    <!-- ========== CARD 12: 宋代点茶亲子共学指南 ========== -->
-    <a href="https://riversnow0505.github.io/song-diancha-family-guide/" target="_blank" rel="noopener noreferrer"
-       class="project-card card-accent-green" data-category="兴趣研究" data-tags="茶文化 宋代 点茶 亲子 传统文化" data-title="宋代点茶亲子共学指南">
+    <!-- ========== CARD 13: 学业冒险复盘 ========== -->
+    <a href="https://riversnow0505.github.io/gradequest/GradeQuest复盘.html" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-coral" data-category="复盘作品集" data-tags="教育 AI 方法论" data-title="学业冒险复盘 · GradeQuest项目全程复盘">
       <div class="card-header">
-        <div class="card-icon-wrap icon-green">&#127861;</div>
-        <span class="card-date">2026-06-22</span>
+        <div class="card-icon-coral icon-coral">&#128203;</div>
+        <span class="card-date">2026-07-11</span>
       </div>
-      <div class="card-title">宋代点茶亲子共学指南</div>
-      <div class="card-desc">带孩子穿越回宋朝——点茶历史、工具、步骤详解，适合家庭亲子共学的宋代茶文化入门指南。</div>
-      <div class="tags-row">
-        <span class="tag tag-green">茶文化</span>
-        <span class="tag tag-green">宋代点茶</span>
-        <span class="tag tag-green">亲子共学</span>
-      </div>
+      <div class="card-title">学业冒险复盘</div>
+      <div class="card-desc">记录「Snow的学业冒险」成绩系统从想法到上线的完整过程——如何用 AI 完成产品决策、架构取舍与迭代。含 PRD、设计系统化、关键架构转向、四阶段搭建、AI 方法论 6 点，附界面还原。可用于作品集展示与同行交流。</div>
+      <div class="tags-row"><span class="tag tag-coral">教育</span><span class="tag tag-coral">AI</span><span class="tag tag-coral">方法论</span></div>
       <div class="card-footer">
         <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
         <span class="card-status-dot status-live" title="在线"></span>
       </div>
     </a>
 
-    <!-- ========== CARD 13: 格林斯潘人物画像 ========== -->
+<!-- ========== CARD 14: 记忆档案室 ========== -->
+    <a href="https://riversnow0505.github.io/wb-memory-system/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="兴趣研究" data-tags="WorkBuddy AI 记忆机制" data-title="记忆档案室 · WorkBuddy记忆体系全景解读">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#129504;</div>
+        <span class="card-date">2026-07-01</span>
+      </div>
+      <div class="card-title">记忆档案室</div>
+      <div class="card-desc">WorkBuddy记忆体系全景解读——三层记忆机制（云端/全局/项目）、调取逻辑、压缩蒸馏、Skill与Markdown优势。深度使用体验整理，适合用于对外讲解和培训。</div>
+      <div class="tags-row"><span class="tag tag-green">WorkBuddy</span><span class="tag tag-green">AI</span><span class="tag tag-green">记忆机制</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 15: Snow的美育地图 ========== -->
+    <a href="https://riversnow0505.github.io/snow-aesthetic-education/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="亲子教育" data-tags="亲子 美育 审美 启蒙 阅读" data-title="Snow的美育地图 · 8-10岁审美启蒙规划">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#127912;</div>
+        <span class="card-date">2026-07-01</span>
+      </div>
+      <div class="card-title">Snow的美育地图</div>
+      <div class="card-desc">8-10岁审美启蒙规划——不搞技巧训练，只搞审美浸泡。五大维度（视觉艺术/音乐审美/传统美学/自然审美/设计思维）+ 时间节奏 + 父母角色指南。家庭内部参考页面。</div>
+      <div class="tags-row"><span class="tag tag-green">亲子</span><span class="tag tag-green">美育</span><span class="tag tag-green">审美</span><span class="tag tag-green">启蒙</span><span class="tag tag-green">阅读</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 16: Snow数学期末诊断 ========== -->
+    <a href="https://riversnow0505.github.io/snow-exam-diagnosis/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="亲子教育" data-tags="亲子 数学 考试诊断 二年级 练习" data-title="Snow 数学期末诊断与举一反五练习">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#128221;</div>
+        <span class="card-date">2026-06-30</span>
+      </div>
+      <div class="card-title">Snow数学期末诊断</div>
+      <div class="card-desc">二年级下册数学期末试卷诊断 + 举一反五练习。含错题"先做后看"交互分析、4大根因总结、6类30道同类练习题（密码保护答案）。让孩子先自己重做再核对答案，区分是粗心还是真不会。</div>
+      <div class="tags-row"><span class="tag tag-green">亲子</span><span class="tag tag-green">数学</span><span class="tag tag-green">考试诊断</span><span class="tag tag-green">二年级</span><span class="tag tag-green">练习</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 17: 教育十五五规划家长指南 ========== -->
+    <a href="https://riversnow0505.github.io/edu-15th-five-year-parent-guide/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="教育政策" data-tags="十五五规划 政策解读 家长指南" data-title="教育发展十五五规划 · 小学生家长行动指南">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#128214;</div>
+        <span class="card-date">2026-06-30</span>
+      </div>
+      <div class="card-title">教育十五五规划·家长指南</div>
+      <div class="card-desc">国务院印发《教育发展"十五五"规划》——从家长的视角解读五大关键变化、新旧理念对比、四个思维转变和七件可操作抓手。一篇让你看懂未来五年教育怎么走。</div>
+      <div class="tags-row"><span class="tag tag-green">十五五规划</span><span class="tag tag-green">政策解读</span><span class="tag tag-green">家长指南</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 18: 高考志愿的底层逻辑 ========== -->
+    <a href="https://riversnow0505.github.io/gaokao-volunteer-logic/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="教育政策" data-tags="高考志愿 资源配置 底层逻辑" data-title="高考志愿的底层逻辑：不是选专业，是做资源配置">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#128214;</div>
+        <span class="card-date">2026-06-29</span>
+      </div>
+      <div class="card-title">高考志愿的底层逻辑</div>
+      <div class="card-desc">你不是在选一个专业读四年书，你是在做一次关乎未来20年的人生关键布局。三条资源配置线——家庭路线、城市生态、学校行业网络——比选对专业重要十倍。</div>
+      <div class="tags-row"><span class="tag tag-green">高考志愿</span><span class="tag tag-green">资源配置</span><span class="tag tag-green">底层逻辑</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 19: 商投行一体化模式研究 ========== -->
+    <a href="https://riversnow0505.github.io/commercial-investment-banking-integration/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-blue" data-category="研读" data-tags="商投行一体化 金融研究 商业银行 资本市场" data-title="信贷与资本市场融合视角下的商投行一体化模式研究">
+      <div class="card-header">
+        <div class="card-icon-blue icon-blue">&#128200;</div>
+        <span class="card-date">2026-06-29</span>
+      </div>
+      <div class="card-title">商投行一体化模式研究</div>
+      <div class="card-desc">当间接融资的"稳定器"遇上直接融资的"创新器"——深度解读信贷市场与资本市场的功能互补逻辑、商投行一体化的"客户-产品-机制"三维重构，以及摩根大通CIB整合的实践数据。以参考行业研究报告为基础。</div>
+      <div class="tags-row"><span class="tag tag-blue">商投行一体化</span><span class="tag tag-blue">金融研究</span><span class="tag tag-blue">商业银行</span><span class="tag tag-blue">资本市场</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 20: AI时代的城市更新 ========== -->
+    <a href="https://riversnow0505.github.io/ai-urban-renewal-platform/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-blue" data-category="研读" data-tags="城市更新 AI 行业分析 空间 运营" data-title="AI时代的城市更新：从空间容器到关系平台">
+      <div class="card-header">
+        <div class="card-icon-blue icon-blue">&#127961;</div>
+        <span class="card-date">2026-06-29</span>
+      </div>
+      <div class="card-title">AI时代的城市更新</div>
+      <div class="card-desc">当 AI 重构分工协作的基本前提，城市空间的价值来源正在不可逆地转移。办公/商业/产业三类空间演化路径 + 信任密度框架 + 新资产管理范式 + 可编程空间推演。</div>
+      <div class="tags-row"><span class="tag tag-blue">城市更新</span><span class="tag tag-blue">AI</span><span class="tag tag-blue">行业分析</span><span class="tag tag-blue">空间</span><span class="tag tag-blue">运营</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 21: 佛道双峰横纵聚拢 ========== -->
+    <a href="https://riversnow0505.github.io/fodao-study/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="兴趣研究" data-tags="佛学 道家 金刚经 道德经 易经" data-title="凡所有相·大象无形 — 佛道双峰横纵聚拢">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#10022;</div>
+        <span class="card-date">2026-06-28</span>
+      </div>
+      <div class="card-title">凡所有相 · 大象无形</div>
+      <div class="card-desc">佛道双峰横纵聚拢。渤海小吏视频中"凡所有相皆是虚妄"与"大方无隅大器免成大音希声大象无形"的深度交汇研究——纵向溯源头、横向对观、交汇落脚。暗色杂志风排版。</div>
+      <div class="tags-row"><span class="tag tag-green">佛学</span><span class="tag tag-green">道家</span><span class="tag tag-green">金刚经</span><span class="tag tag-green">道德经</span><span class="tag tag-green">易经</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 22: 南普陀寺拜佛指引详解 ========== -->
+    <a href="https://riversnow0505.github.io/nanputuo-guide/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="旅行" data-tags="旅行 厦门 寺庙 南普陀 拜佛 指南" data-title="南普陀寺 · 拜佛指引详解">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#9962;</div>
+        <span class="card-date">2026-06-28</span>
+      </div>
+      <div class="card-title">南普陀寺 · 拜佛指引详解</div>
+      <div class="card-desc">闽南第一古刹·免费赠香·千年禅意。寺院布局、拜佛路线、殿堂详解、礼佛仪轨、速查表与实用信息——从弥勒佛到文殊菩萨，从入门到圆满，一份让诚心更清晰的参访指南。</div>
+      <div class="tags-row"><span class="tag tag-green">旅行</span><span class="tag tag-green">厦门</span><span class="tag tag-green">寺庙</span><span class="tag tag-green">南普陀</span><span class="tag tag-green">拜佛</span><span class="tag tag-green">指南</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 23: 厦大探险指南 ========== -->
+    <a href="https://riversnow0505.github.io/xmu-kids-exploration-guide/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="亲子教育" data-tags="厦大 厦门大学 亲子 启蒙 高校" data-title="厦大探险指南 · 给孩子的中国最美大学启蒙攻略">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#127968;</div>
+        <span class="card-date">2026-06-28</span>
+      </div>
+      <div class="card-title">厦大探险指南</div>
+      <div class="card-desc">在中国最美大学里，藏着天鹅湖、涂鸦隧道和 368 年前的练兵场。给孩子的厦大启蒙攻略，5 大探险站点 + 百年故事 + 冷知识 + 路线图。</div>
+      <div class="tags-row"><span class="tag tag-green">厦大</span><span class="tag tag-green">厦门大学</span><span class="tag tag-green">亲子</span><span class="tag tag-green">启蒙</span><span class="tag tag-green">高校</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 24: AI + 公寓运营 学习系列 + 公寓运营 学习系列 ========== -->
+    <a href="https://riversnow0505.github.io/ai-hands-on/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="兴趣研究" data-tags="AI 公寓运营 案例 技术栈" data-title="AI + 公寓运营 学习系列 - 案例拆解与技术栈入门">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#128187;</div>
+        <span class="card-date">2026-06-26</span>
+      </div>
+      <div class="card-title">AI + 公寓运营 学习系列</div>
+      <div class="card-desc">从一个真实案例出发：268块AI token、19天交付物业收费系统。深度拆解5个大坑+4条核心洞察，再用土木工程的视角零基础入门技术栈。持续更新中。</div>
+      <div class="tags-row"><span class="tag tag-green">AI</span><span class="tag tag-green">公寓运营</span><span class="tag tag-green">案例</span><span class="tag tag-green">技术栈</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 25: Snow的三年级计划 ========== -->
+    <a href="https://riversnow0505.github.io/sinuos-grade3-plan/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="亲子教育" data-tags="亲子 三年级 语文 阅读" data-title="Snow的三年级计划 - 暑假语文家庭共学方案">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#128214;</div>
+        <span class="card-date">2026-06-25</span>
+      </div>
+      <div class="card-title">Snow的三年级计划</div>
+      <div class="card-desc">从暑假到三年级上学期的语文家庭共学方案。含每周安排、30分钟阅读结构、古诗动画学习、选书路线图、书写练习和口头表达训练。</div>
+      <div class="tags-row"><span class="tag tag-green">亲子</span><span class="tag tag-green">三年级</span><span class="tag tag-green">语文</span><span class="tag tag-green">阅读</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 26: 语文教育改革深度分析 ========== -->
+    <a href="https://riversnow0505.github.io/chinese-education-reform/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="教育政策" data-tags="语文 高考改革" data-title="语文大变局：从2026中高考改革看十年学习路线图">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#128214;</div>
+        <span class="card-date">2026-06-25</span>
+      </div>
+      <div class="card-title">语文大变局</div>
+      <div class="card-desc">从2026中高考改革看十年语文学习路线图。深度分析国家人才筛选逻辑转向：从"考知识"到"考素养"，温儒敏核心观点解读，以及对家庭教育的实操建议框架。</div>
+      <div class="tags-row"><span class="tag tag-green">语文</span><span class="tag tag-green">高考改革</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 27: 厦门隐性债务683亿事件 ========== -->
+    <a href="https://riversnow0505.github.io/xiamen-hidden-debt/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-coral" data-category="研读" data-tags="厦门 隐性债务 财政部 通报 城投" data-title="厦门隐性债务683亿事件·深度解读">
+      <div class="card-header">
+        <div class="card-icon-coral icon-coral">&#127963;</div>
+        <span class="card-date">2026-06-25</span>
+      </div>
+      <div class="card-title">厦门隐性债务683亿事件</div>
+      <div class="card-desc">2025年财政部通报六起隐性债务典型案例，厦门以683.96亿元居首。从隐性债务概念、操作手法到问责清单、深层逻辑，一篇文章读懂对厦门的影响。</div>
+      <div class="tags-row"><span class="tag tag-coral">厦门</span><span class="tag tag-coral">隐性债务</span><span class="tag tag-coral">财政部</span><span class="tag tag-coral">通报</span><span class="tag tag-coral">城投</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 28: 银行从业资格证横纵分析 ========== -->
+    <a href="https://riversnow0505.github.io/banking-cert-hv/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="兴趣研究" data-tags="银行从业 资格证 横纵分析 金融" data-title="银行从业资格证 · 横纵分析报告">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#127891;</div>
+        <span class="card-date">2026-06-24</span>
+      </div>
+      <div class="card-title">银行从业资格证 · 横纵分析</div>
+      <div class="card-desc">中国银行业的"入门驾照"二十年演进史。纵向追时间深度（2006试点→2013制度确立→2017国家背书→2020职称打通），横向比竞争生态（四大金融从业资格、六个高阶证书），交汇处给出双轨策略和三种未来路径判断。</div>
+      <div class="tags-row"><span class="tag tag-green">银行从业</span><span class="tag tag-green">资格证</span><span class="tag tag-green">横纵分析</span><span class="tag tag-green">金融</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 29: 格林斯潘人物画像 ========== -->
     <a href="https://riversnow0505.github.io/greenspan-profile/" target="_blank" rel="noopener noreferrer"
-       class="project-card card-accent-blue" data-category="兴趣研究" data-tags="格林斯潘 美联储 人物 经济 金融 百年" data-title="艾伦·格林斯潘人物画像：美联储的指挥大师">
+       class="project-card card-accent-green" data-category="兴趣研究" data-tags="格林斯潘 美联储 人物 经济 金融 百年" data-title="艾伦·格林斯潘人物画像：美联储的指挥大师">
       <div class="card-header">
-        <div class="card-icon-wrap icon-blue">&#127891;</div>
+        <div class="card-icon-green icon-green">&#127891;</div>
         <span class="card-date">2026-06-24</span>
       </div>
       <div class="card-title">格林斯潘人物画像</div>
       <div class="card-desc">从爵士乐手到"经济沙皇"——艾伦·格林斯潘的百年人生。黑色星期一、非理性繁荣、格林斯潘看跌期权，三大经典案例拆解。理解美联储的"指挥大师"，也理解"救市逻辑"的代价。</div>
-      <div class="tags-row">
-        <span class="tag tag-blue">人物传记</span>
-        <span class="tag tag-blue">美联储</span>
-        <span class="tag tag-blue">经济史</span>
-      </div>
+      <div class="tags-row"><span class="tag tag-green">格林斯潘</span><span class="tag tag-green">美联储</span><span class="tag tag-green">人物</span><span class="tag tag-green">经济</span><span class="tag tag-green">金融</span><span class="tag tag-green">百年</span></div>
       <div class="card-footer">
         <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
         <span class="card-status-dot status-live" title="在线"></span>
       </div>
     </a>
 
-    <!-- ========== CARD 14: 银行从业专项学习工作台 ========== -->
-    <a href="https://riversnow0505.github.io/banking-cert-tai/" target="_blank" rel="noopener noreferrer"
-       class="project-card card-accent-green" data-category="兴趣研究" data-tags="银行从业 备考 学习工作台 法规 理财 知识" data-title="银行从业专项学习工作台">
+<!-- ========== CARD 30: 宋代点茶亲子共学指南 ========== -->
+    <a href="https://riversnow0505.github.io/song-diancha-family-guide/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="兴趣研究" data-tags="茶文化 宋代 点茶 亲子 传统文化" data-title="宋代点茶亲子共学指南">
       <div class="card-header">
-        <div class="card-icon-wrap icon-green">&#128218;</div>
-        <span class="card-date">2026-08-03</span>
+        <div class="card-icon-green icon-green">&#127861;</div>
+        <span class="card-date">2026-06-22</span>
       </div>
-      <div class="card-title">银行从业专项学习工作台</div>
-      <div class="card-desc">8/10 启动 · 11 周到考试的个人备考指挥台：今日任务自动派发、科目进度看板、学习打卡连续天数、错题本——单文件本地存储，手机电脑通用。</div>
+      <div class="card-title">宋代点茶亲子共学指南</div>
+      <div class="card-desc">带孩子穿越回宋朝——点茶历史、工具、步骤详解，适合家庭亲子共学的宋代茶文化入门指南。</div>
+      <div class="tags-row"><span class="tag tag-green">茶文化</span><span class="tag tag-green">宋代</span><span class="tag tag-green">点茶</span><span class="tag tag-green">亲子</span><span class="tag tag-green">传统文化</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 31: 武夷岩茶完整知识图谱 ========== -->
+    <a href="https://riversnow0505.github.io/wuyi-rock-tea-atlas/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="兴趣研究" data-tags="岩茶 武夷山 茶文化 知识图谱 品种" data-title="武夷岩茶完整知识图谱">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#127861;</div>
+        <span class="card-date">2026-06-22</span>
+      </div>
+      <div class="card-title">武夷岩茶完整知识图谱</div>
+      <div class="card-desc">武夷岩茶全貌梳理——品种体系、山场分布、工艺脉络、品鉴框架，一张图谱掌握岩茶知识体系。</div>
+      <div class="tags-row"><span class="tag tag-green">岩茶</span><span class="tag tag-green">武夷山</span><span class="tag tag-green">茶文化</span><span class="tag tag-green">知识图谱</span><span class="tag tag-green">品种</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 32: 水仙 · 武夷岩茶当家花旦深度解读 · 武夷岩茶当家花旦深度解读 ========== -->
+    <a href="https://riversnow0505.github.io/shuixian-tea-deep-interpretation/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="兴趣研究" data-tags="岩茶 武夷山 茶文化 水仙 深度解读" data-title="水仙 · 武夷岩茶当家花旦深度解读">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#127861;</div>
+        <span class="card-date">2026-06-22</span>
+      </div>
+      <div class="card-title">水仙 · 武夷岩茶当家花旦深度解读</div>
+      <div class="card-desc">从"水仙"的品种特征、品鉴密码到制作工艺、山场分布——武夷岩茶水仙的全面深度解读。</div>
+      <div class="tags-row"><span class="tag tag-green">岩茶</span><span class="tag tag-green">武夷山</span><span class="tag tag-green">茶文化</span><span class="tag tag-green">水仙</span><span class="tag tag-green">深度解读</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 33: 肉桂 · 武夷岩茶当家花旦深度解读 · 武夷岩茶当家花旦深度解读 ========== -->
+    <a href="https://riversnow0505.github.io/rougui-tea-deep-interpretation/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="兴趣研究" data-tags="岩茶 武夷山 茶文化 深度解读" data-title="肉桂 · 武夷岩茶当家花旦深度解读">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#127861;</div>
+        <span class="card-date">2026-06-22</span>
+      </div>
+      <div class="card-title">肉桂 · 武夷岩茶当家花旦深度解读</div>
+      <div class="card-desc">从"霸气""辛锐"的品鉴密码到全肉宴体系、岩茶工艺、山场密码，再到牛肉马肉历史公案——一份让喝茶速度慢下来的理性导览。</div>
+      <div class="tags-row"><span class="tag tag-green">岩茶</span><span class="tag tag-green">武夷山</span><span class="tag tag-green">茶文化</span><span class="tag tag-green">深度解读</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 34: 房屋安全管理制度政策动态研判 ========== -->
+    <a href="https://riversnow0505.github.io/house-safety-policy-analysis/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-coral" data-category="研读" data-tags="政策 建行 住房 安全 保险 房屋" data-title="房屋安全管理制度政策动态研判 — 学习解读">
+      <div class="card-header">
+        <div class="card-icon-coral icon-coral">&#127963;</div>
+        <span class="card-date">2026-06-18</span>
+      </div>
+      <div class="card-title">房屋安全管理制度政策动态研判</div>
+      <div class="card-desc">建行研修中心专题报告学习解读。三项制度（体检·资金·保险）打透「钱·体·险」心智框架，含日本经验、宁波案例、自检问题，适合非科班读者快速消化政策文件。</div>
+      <div class="tags-row"><span class="tag tag-coral">政策</span><span class="tag tag-coral">建行</span><span class="tag tag-coral">住房</span><span class="tag tag-coral">安全</span><span class="tag tag-coral">保险</span><span class="tag tag-coral">房屋</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 35: 宏鼎国际公寓退出方案测算 ========== -->
+    <a href="https://riversnow0505.github.io/hongding-exit-plan/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-amber" data-category="项目" data-tags="建信 住房 宏鼎 公寓 退出 方案 测算 投资" data-title="宏鼎国际公寓退出方案测算">
+      <div class="card-header">
+        <div class="card-icon-amber icon-amber">&#128202;</div>
+        <span class="card-date">2026-06-18</span>
+      </div>
+      <div class="card-title">宏鼎国际公寓退出方案测算</div>
+      <div class="card-desc">建信住房厦门分公司·宏鼎国际公寓项目退出方案测算。5个退出时点方案对比（6/21→8/21→12/31），含运营亏损、押金、违约金的拆解分析与战略建议。取法乎上，得乎其中。</div>
+      <div class="tags-row"><span class="tag tag-amber">建信</span><span class="tag tag-amber">住房</span><span class="tag tag-amber">宏鼎</span><span class="tag tag-amber">公寓</span><span class="tag tag-amber">退出</span><span class="tag tag-amber">方案</span><span class="tag tag-amber">测算</span><span class="tag tag-amber">投资</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 36: 2026年端午·武夷山·家庭路书 ========== -->
+    <a href="https://riversnow0505.github.io/wuyi-family-guidebook-2026/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="旅行" data-tags="旅行 武夷山 路书 亲子" data-title="2026年端午·武夷山·家庭路书">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#128214;</div>
+        <span class="card-date">2026-06-18</span>
+      </div>
+      <div class="card-title">2026年端午·武夷山·家庭路书</div>
+      <div class="card-desc">一家三口（+8岁女儿）的武夷山三天两晚端午之旅攻略。含行程规划、竹筏漂流、大红袍探访、美食住宿推荐，以及给孩子讲的武夷山故事和深度人文附录。</div>
+      <div class="tags-row"><span class="tag tag-green">旅行</span><span class="tag tag-green">武夷山</span><span class="tag tag-green">路书</span><span class="tag tag-green">亲子</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 37: 2026陆家嘴论坛深度解读 ========== -->
+    <a href="https://riversnow0505.github.io/lujiazui2026/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-coral" data-category="研读" data-tags="金融 政策 陆家嘴论坛 解读 央行 证监会 监管" data-title="2026陆家嘴论坛三大监管演讲深度解读">
+      <div class="card-header">
+        <div class="card-icon-coral icon-coral">&#128200;</div>
+        <span class="card-date">2026-06-17</span>
+      </div>
+      <div class="card-title">2026陆家嘴论坛深度解读</div>
+      <div class="card-desc">穿透式解读潘功胜、丁向群、吴清三篇演讲——从"发动机切换"到"利率手术刀"到"投资市重构"，行内人不说但知道的事。适合非金融背景读者下学习圈深度递进。</div>
+      <div class="tags-row"><span class="tag tag-coral">金融</span><span class="tag tag-coral">政策</span><span class="tag tag-coral">陆家嘴论坛</span><span class="tag tag-coral">解读</span><span class="tag tag-coral">央行</span><span class="tag tag-coral">证监会</span><span class="tag tag-coral">监管</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 38: 厦门青年住房保障政策 ========== -->
+    <a href="https://riversnow0505.github.io/xiamen-youth-housing/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-coral" data-category="研读" data-tags="厦门 政策 住房 青年 保障 租赁 建信" data-title="厦门市青年住房保障政策解读">
+      <div class="card-header">
+        <div class="card-icon-coral icon-coral">&#127968;</div>
+        <span class="card-date">2026-06-11</span>
+      </div>
+      <div class="card-title">厦门青年住房保障政策解读</div>
+      <div class="card-desc">《厦门市加大新就业大学生等青年群体租赁住房保障工作的若干意见》（送审稿）深度解读。从建信住房厦门公司经营视角分析政策机遇与风险，含新旧政策对比、补贴标准、资金流向图表。</div>
+      <div class="tags-row"><span class="tag tag-coral">厦门</span><span class="tag tag-coral">政策</span><span class="tag tag-coral">住房</span><span class="tag tag-coral">青年</span><span class="tag tag-coral">保障</span><span class="tag tag-coral">租赁</span><span class="tag tag-coral">建信</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 39: 国办发〔2026〕13号文解读 ========== -->
+    <a href="https://riversnow0505.github.io/guoban-2026-13/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-coral" data-category="研读" data-tags="政策 不动产 投资 解读 国办 住房" data-title="国办发〔2026〕13号文·不动产投资开发视角解读">
+      <div class="card-header">
+        <div class="card-icon-coral icon-coral">&#127963;</div>
+        <span class="card-date">2026-06-11</span>
+      </div>
+      <div class="card-title">国办发〔2026〕13号文解读</div>
+      <div class="cell-desc">从不动产投资开发视角深度解读国办发〔2026〕13号文，涵盖政策要点、市场影响与应对策略。</div>
+      <div class="tags-row"><span class="tag tag-coral">政策</span><span class="tag tag-coral">不动产</span><span class="tag tag-coral">投资</span><span class="tag tag-coral">解读</span><span class="tag tag-coral">国办</span><span class="tag tag-coral">住房</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 40: 城市更新十五五规划 ========== -->
+    <a href="https://riversnow0505.github.io/test/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-coral" data-category="研读" data-tags="城市 规划 政策 十五五" data-title="城市更新十五五规划学习材料">
+      <div class="card-header">
+        <div class="card-icon-coral icon-coral">&#127961;</div>
+        <span class="card-date">2026-06-08</span>
+      </div>
+      <div class="card-title">城市更新十五五规划学习材料</div>
+      <div class="cell-desc">关于城市更新领域十五五规划的学习整理资料。</div>
+      <div class="tags-row"><span class="tag tag-coral">城市</span><span class="tag tag-coral">规划</span><span class="tag tag-coral">政策</span><span class="tag tag-coral">十五五</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+<!-- ========== CARD 41: 女儿财商启蒙计划 ========== -->
+    <a href="https://riversnow0505.github.io/daughter-finance-plan/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="亲子教育" data-tags="亲子 财商" data-title="女儿财商启蒙十年计划">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#128214;</div>
+        <span class="card-date">2026-06-08</span>
+      </div>
+      <div class="card-title">女儿财商启蒙十年计划</div>
+      <div class="card-desc">为 8 岁女儿设计的财权阶梯式移交方案——从红包提取 10% 到完全自主，配合三账户制度（零花钱/储蓄金/爱心基金），用十年时间培养负责任的金钱观。含完整 HTML Slides 演示版。</div>
+      <div class="tags-row"><span class="tag tag-green">亲子</span><span class="tag tag-green">财商</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+
+
+    <!-- ========== CARD 42: 开悟的科学原理与启发用法 ========== -->
+    <a href="https://riversnow0505.github.io/kaiwu-science/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="兴趣研究" data-tags="开悟 顿悟 学习科学" data-title="开悟的科学原理与启发用法">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#128161;</div>
+        <span class="card-date">2026-07-19</span>
+      </div>
+      <div class="card-title">开悟的科学原理与启发用法</div>
+      <div class="card-desc">开悟不是玄学——用脑科学、运动学习、睡眠研究与心流理论，拆解“量变到质变”之外更精密的突破逻辑，并落到孩子教育与成人自学两条实战路径。</div>
       <div class="tags-row">
-        <span class="tag tag-green">银行从业</span>
-        <span class="tag tag-green">备考</span>
-        <span class="tag tag-green">学习工作台</span>
+        <span class="tag tag-green">开悟</span>
+        <span class="tag tag-green">顿悟</span>
+        <span class="tag tag-green">学习科学</span>
       </div>
       <div class="card-footer">
         <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
@@ -759,7 +1227,37 @@
       </div>
     </a>
 
-    <!-- ========== ADD NEW CARD ========== -->
+    <a href="https://riversnow0505.github.io/github-explained/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="兴趣研究" data-tags="GitHub 技术科普 可视化" data-title="GitHub 是怎么运作的 · 可视化科普">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#128187;</div>
+        <span class="card-date">2026-07-20</span>
+      </div>
+      <div class="card-title">GitHub 是怎么运作的 · 可视化科普</div>
+      <div class="card-desc">技术小白向：用「云端图书馆」与「做菜」两个比喻，讲清克隆 / 翻译 / 调试 / 运行到底在哪发生——GitHub 不替你跑代码，运行全在本地电脑。含 SVG 全景流程图与误区对照。</div>
+      <div class="tags-row"><span class="tag tag-green">GitHub</span><span class="tag tag-green">技术科普</span><span class="tag tag-green">可视化</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+    <!-- ========== CARD 43: 建信住租深度调研（机构研究版 V2） ========== -->
+    <a href="https://riversnow0505.github.io/jianxin-zhuzu-yanjiu/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-coral" data-category="研读" data-tags="建信 住房租赁 私募REITs 调研" data-title="建信住房租赁私募基金管理有限公司 深度调研 · 机构研究版 V2">
+      <div class="card-header">
+        <div class="card-icon-coral icon-coral">&#128196;</div>
+        <span class="card-date">2026-07-29</span>
+      </div>
+      <div class="card-title">建信住租深度调研（机构研究版 V2）</div>
+      <div class="card-desc">银行系住房租赁「资本运作心脏」——建信信托全资 GP，管 300 亿母基金，构建「投融管退」闭环；含业务体量、商业模式、金融工具与 REIT 退出、核心竞争力、风险全解析。</div>
+      <div class="tags-row"><span class="tag tag-coral">建信</span><span class="tag tag-coral">住房租赁</span><span class="tag tag-coral">私募REITs</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
     <a href="https://github.com/Riversnow0505?tab=repositories" target="_blank" rel="noopener noreferrer"
        class="add-card" id="addCard">
       <div class="add-icon">+</div>
@@ -935,6 +1433,42 @@
       setCategory('all');
     }
   });
+
+  // ===== SORT TOGGLE（最新在前 / 最早在前）=====
+  var sortToggle = document.getElementById('sortToggle');
+  var sortLabel = document.getElementById('sortLabel');
+  var sortOrder = sessionStorage.getItem('portal_sort') || 'desc'; // desc=新→旧, asc=旧→新
+
+  function getCardDate(card) {
+    var d = card.querySelector('.card-date');
+    return d ? d.textContent.trim() : '0000-00-00';
+  }
+
+  function applySort() {
+    var sorted = cards.slice().sort(function(a, b) {
+      var da = getCardDate(a), db = getCardDate(b);
+      if (da === db) return 0;
+      // desc：日期大的（新）排前面
+      return sortOrder === 'desc' ? (da < db ? 1 : -1) : (da < db ? -1 : 1);
+    });
+    sorted.forEach(function(c) { cardGrid.appendChild(c); });
+    // 维持 addCard 与 noResults 在末尾
+    cardGrid.appendChild(addCardEl);
+    cardGrid.appendChild(noResults);
+    sortLabel.textContent = sortOrder === 'desc' ? '最新在前' : '最早在前';
+    sortToggle.classList.toggle('asc', sortOrder === 'asc');
+  }
+
+  function toggleSort() {
+    sortOrder = (sortOrder === 'desc') ? 'asc' : 'desc';
+    sessionStorage.setItem('portal_sort', sortOrder);
+    applySort();
+    applyFilters();
+  }
+
+  // 初始排序（默认倒序：新→旧）
+  applySort();
+  applyFilters();
 </script>
 
 </body>
