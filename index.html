@@ -395,6 +395,7 @@
 .project-card:nth-child(33) { animation-delay:1.86s; }
 .project-card:nth-child(34) { animation-delay:1.92s; }
 .project-card:nth-child(35) { animation-delay:1.98s; }
+.project-card:nth-child(46) { animation-delay:2.04s; }
 
 
 
@@ -494,24 +495,24 @@
   <div class="stats-bar">
     <div class="stat-item">
       <span class="stat-dot" style="background:var(--accent);"></span>
-      <span>共</span><span class="stat-num" id="totalCount">45</span><span>个项目</span>
+      <span>共</span><span class="stat-num" id="totalCount">46</span><span>个项目</span>
     </div>
     <div class="stat-item">
       <span class="stat-dot status-live"></span><span>全部在线</span>
     </div>
     <div class="stat-item">
       <span class="stat-dot" style="background:var(--blue);"></span>
-      <span id="lastUpdate">最后更新：2026-08-04</span>
+      <span id="lastUpdate">最后更新：2026-08-10</span>
     </div>
   </div>
 
   <div class="filter-bar" id="filterBar">
-    <button class="filter-btn active" data-cat="all" onclick="setCategory('all')">全部 <span class="count">45</span></button>
+    <button class="filter-btn active" data-cat="all" onclick="setCategory('all')">全部 <span class="count">46</span></button>
     <button class="filter-btn filter-btn-coral" data-cat="复盘作品集" onclick="setCategory('复盘作品集')">复盘作品集 <span class="count">3</span></button>
     <button class="filter-btn filter-btn-coral" data-cat="研读" onclick="setCategory('研读')">政策研读 <span class="count">11</span></button>
     <button class="filter-btn filter-btn-amber" data-cat="项目" onclick="setCategory('项目')">公司项目 <span class="count">1</span></button>
     <button class="filter-btn filter-btn-green" data-cat="旅行" onclick="setCategory('旅行')">旅行攻略 <span class="count">2</span></button>
-    <button class="filter-btn filter-btn-green" data-cat="亲子教育" onclick="setCategory('亲子教育')">亲子教育 <span class="count">10</span></button>
+    <button class="filter-btn filter-btn-green" data-cat="亲子教育" onclick="setCategory('亲子教育')">亲子教育 <span class="count">11</span></button>
     <button class="filter-btn filter-btn-green" data-cat="教育政策" onclick="setCategory('教育政策')">教育政策 <span class="count">3</span></button>
     <button class="filter-btn filter-btn-green" data-cat="兴趣研究" onclick="setCategory('兴趣研究')">兴趣研究 <span class="count">15</span></button>
     <button class="sort-btn" id="sortToggle" onclick="toggleSort()" title="切换排序：最新在前 / 最早在前">
@@ -526,7 +527,7 @@
 
   <div class="section-label">
     <span class="section-title">全部项目</span>
-    <span class="section-count" id="visibleCount">显示 45 个</span>
+    <span class="section-count" id="visibleCount">显示 46 个</span>
   </div>
 
   <div class="card-grid" id="cardGrid">
@@ -1268,6 +1269,22 @@
       <div class="card-title">银行从业专项学习工作台</div>
       <div class="card-desc">银行从业资格备考工作台：8/10 启动、11 周计划，今日任务派发 / 科目进度看板 / 学习打卡 / 错题本四模块，数据存本地，手机电脑通用，支持导出备份。</div>
       <div class="tags-row"><span class="tag tag-green">银行从业</span><span class="tag tag-green">备考</span><span class="tag tag-green">工作台</span></div>
+      <div class="card-footer">
+        <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="card-status-dot status-live" title="在线"></span>
+      </div>
+    </a>
+
+    <!-- ========== 做中学家庭计划（新增 2026-08-10） ========== -->
+    <a href="https://riversnow0505.github.io/science-family-plan/" target="_blank" rel="noopener noreferrer"
+       class="project-card card-accent-green" data-category="亲子教育" data-tags="做中学 科学教育 家庭计划" data-title="做中学家庭计划">
+      <div class="card-header">
+        <div class="card-icon-green icon-green">&#x1F9EA;</div>
+        <span class="card-date">2026-08-10</span>
+      </div>
+      <div class="card-title">做中学家庭计划</div>
+      <div class="card-desc">教育部2026科学教育"做中学"新政解读与三年级动手教育家庭计划：六大主题适配、课程决策、家庭行动清单与时间线。</div>
+      <div class="tags-row"><span class="tag tag-green">做中学</span><span class="tag tag-green">科学教育</span><span class="tag tag-green">家庭计划</span></div>
       <div class="card-footer">
         <span class="card-link-text">打开网站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
         <span class="card-status-dot status-live" title="在线"></span>
